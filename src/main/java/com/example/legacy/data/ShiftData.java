@@ -25,6 +25,8 @@ public class ShiftData {
                     .withCSVParser(new CSVParserBuilder().withSeparator(',').build()).build();
             List<String[]> contents = reader.readAll();
             for (String[] line : contents) {
+                if(line[2].length() == 0)
+                    line[2] = "00:00-00:00";
                 String[] interval = line[2].split("-");
                 res.add(new Shift(line[0], line[1], interval[0], interval[1]));
             }
