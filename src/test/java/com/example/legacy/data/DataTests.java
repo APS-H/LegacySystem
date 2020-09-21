@@ -26,28 +26,27 @@ class DataTests {
 
     @Test
     void getEmployersTest() {
-        assertEquals(employerData.getEmployers().size(), 139);
+        assertEquals(139, employerData.getEmployers().size());
     }
 
     @Test
     void getItemsTest() {
-        assertEquals(ItemData.getItems().size(), 90);
+        assertEquals(90, ItemData.getItems().size());
     }
 
     @Test
     void getOrdersTest() {
-        assertEquals(orderData.getOrders().size(), 78);
+        assertEquals(78, orderData.getOrders().size());
     }
 
     @Test
     void getResourcesTest() {
-        assertEquals(resourceData.getGroups().size(), 34);
-        assertEquals(resourceData.getDevices().size(), 31);
+        assertEquals(65, resourceData.getResources().size());
     }
 
     @Test
     void getShiftsTest() {
-        assertEquals(shiftData.getShifts().size(), 4);
+        assertEquals(4, shiftData.getShifts().size());
     }
 
 }

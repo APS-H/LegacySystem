@@ -9,8 +9,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Resource {
 
+    private String code;
+
     private String name;
 
+    private String type;
+
     private Integer count;
+
+    private String day;
+
+    private String shift;
 
 }
