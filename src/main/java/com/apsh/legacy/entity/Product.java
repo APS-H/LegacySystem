@@ -1,4 +1,4 @@
-package com.example.legacy.entity;
+package com.apsh.legacy.entity;
 
 import java.util.List;
 

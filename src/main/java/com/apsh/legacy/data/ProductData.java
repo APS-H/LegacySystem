@@ -1,11 +1,11 @@
-package com.example.legacy.data;
+package com.apsh.legacy.data;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.legacy.entity.Product;
+import com.apsh.legacy.entity.Product;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;

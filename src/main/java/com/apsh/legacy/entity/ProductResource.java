@@ -1,4 +1,4 @@
-package com.example.legacy.entity;
+package com.apsh.legacy.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductItem {
+public class ProductResource {
 
     private String code;
 
-    private Integer count;
+    private String name;
+
+    private String type;
+
+    private Integer capacity;
 
 }
