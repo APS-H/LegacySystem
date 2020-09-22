@@ -41,7 +41,7 @@ public class ERPService {
     @WebMethod
     public String getProductService() throws Exception {
         List<Product> res = producrData.getProducts();
-        System.out.println(res.size());
+        //System.out.println(res.size());
         Products rs = new Products(res);
         Transformer<Products> jtx = new Transformer<>();
         return jtx.java2Xml(rs);
