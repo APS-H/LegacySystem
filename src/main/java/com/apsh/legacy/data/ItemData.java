@@ -1,22 +1,17 @@
 package com.apsh.legacy.data;
 
 import com.apsh.legacy.entity.Item;
-import com.apsh.legacy.entity.Items;
-import com.apsh.legacy.util.Transformer;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebService
-@Component
+@Repository
 public class ItemData {
 
     static private String file = "schema/item.csv";
@@ -34,15 +29,6 @@ public class ItemData {
             e.printStackTrace();
         }
         return res;
-    }
-
-    @WebMethod
-    public String getItemService() throws Exception {
-        List<Item> res = getItems();
-        Items its = new Items(res);
-        Transformer<Items> jtx = new Transformer<>();
-        return jtx.java2Xml(its);
-
     }
 
 }

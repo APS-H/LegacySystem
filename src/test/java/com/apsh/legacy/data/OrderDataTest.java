@@ -1,5 +1,6 @@
 package com.apsh.legacy.data;
 
+import com.apsh.legacy.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -11,7 +12,7 @@ class OrderDataTest {
 
     @Test
     public void TestGetOrderService() throws Exception {
-        OrderData s = new OrderData();
+        OrderService s = new OrderService();
         String actual = s.getOrderService();
         System.out.println(actual);
         assertNotNull(actual);

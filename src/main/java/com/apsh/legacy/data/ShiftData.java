@@ -1,22 +1,17 @@
 package com.apsh.legacy.data;
 
 import com.apsh.legacy.entity.Shift;
-import com.apsh.legacy.entity.Shifts;
-import com.apsh.legacy.util.Transformer;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebService
-@Component
+@Repository
 public class ShiftData {
 
     static private String file = "schema/shift.csv";
@@ -38,15 +33,6 @@ public class ShiftData {
             e.printStackTrace();
         }
         return res;
-    }
-
-    @WebMethod
-    public String getShiftService() throws Exception {
-        List<Shift> res = getShifts();
-        Shifts sfs = new Shifts(res);
-        Transformer<Shifts> jtx = new Transformer<>();
-        return jtx.java2Xml(sfs);
-
     }
 
 }

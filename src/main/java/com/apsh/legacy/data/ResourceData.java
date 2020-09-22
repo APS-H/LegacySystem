@@ -1,15 +1,11 @@
 package com.apsh.legacy.data;
 
 import com.apsh.legacy.entity.Resource;
-import com.apsh.legacy.entity.Resources;
-import com.apsh.legacy.util.Transformer;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -17,8 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@WebService
-@Component
+@Repository
 public class ResourceData {
 
     static private String calFile = "schema/cal.csv";
@@ -47,15 +42,6 @@ public class ResourceData {
             e.printStackTrace();
         }
         return res;
-    }
-
-    @WebMethod
-    public String getResourceService() throws Exception {
-        List<Resource> res = getResources();
-        Resources rs = new Resources(res);
-        Transformer<Resources> jtx = new Transformer<>();
-        return jtx.java2Xml(rs);
-
     }
 
 }

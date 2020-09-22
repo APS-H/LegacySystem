@@ -1,15 +1,11 @@
 package com.apsh.legacy.data;
 
 import com.apsh.legacy.entity.Employee;
-import com.apsh.legacy.entity.Employees;
-import com.apsh.legacy.util.Transformer;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -18,8 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@WebService
-@Component
+@Repository
 public class EmployeeData {
 
     static private final String file = "schema/group.csv";
@@ -45,14 +40,6 @@ public class EmployeeData {
             e.printStackTrace();
         }
         return res;
-    }
-
-    @WebMethod
-    public String getEmployeesService() throws Exception {
-        List<Employee> res = getEmployees();
-        Employees emd = new Employees(res);
-        Transformer<Employees> jtx = new Transformer<>();
-        return jtx.java2Xml(emd);
     }
 
 }
