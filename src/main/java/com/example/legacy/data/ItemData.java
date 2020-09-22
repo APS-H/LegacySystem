@@ -2,17 +2,24 @@ package com.example.legacy.data;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.legacy.entity.Employer;
+import com.example.legacy.entity.Employers;
 import com.example.legacy.entity.Item;
+import com.example.legacy.entity.Items;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
 import org.springframework.stereotype.Service;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.bind.JAXBException;
 
-@Service
+@WebService
 public class ItemData {
 
     static private String file = "schema/item.csv";
@@ -30,6 +37,14 @@ public class ItemData {
             e.printStackTrace();
         }
         return res;
+    }
+    @WebMethod
+    public String getItemService() throws Exception {
+        List<Item> res = getItems();
+        Items its = new Items(res);
+        JavaToXml<Items> jtx = new JavaToXml<>();
+        return jtx.JavaToXml(its);
+
     }
 
 }

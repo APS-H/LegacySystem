@@ -1,20 +1,25 @@
 package com.example.legacy.data;
 
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import com.example.legacy.entity.Employer;
+import com.example.legacy.entity.Employers;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-import org.springframework.stereotype.Service;
-
-@Service
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+@WebService
 public class EmployerData {
 
     static private String file = "schema/group.csv";
@@ -42,4 +47,21 @@ public class EmployerData {
         return res;
     }
 
+    @WebMethod
+    public String getEmployersService() throws Exception {
+        List<Employer> res = getEmployers();
+        Employers emd = new Employers(res);
+        JavaToXml<Employers> jtx = new JavaToXml<>();
+        return jtx.JavaToXml(emd);
+
+    }
+
+
+
+
+//测试用
+    public static void main(String[] args) throws Exception {
+        EmployerData s = new EmployerData();
+        System.out.println(s.getEmployersService());
+    }
 }
