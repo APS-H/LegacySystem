@@ -24,6 +24,9 @@ class DataTests {
     @Autowired
     ShiftData shiftData;
 
+    @Autowired
+    ProductData productData;
+
     @Test
     void getEmployeesTest() {
         assertEquals(139, employeeData.getEmployees().size());
@@ -47,6 +50,11 @@ class DataTests {
     @Test
     void getShiftsTest() {
         assertEquals(4, shiftData.getShifts().size());
+    }
+
+    @Test
+    void getProductsTest() {
+        assertEquals(7, productData.getProducts().size());
     }
 
 }
