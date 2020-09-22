@@ -13,14 +13,16 @@ import javax.xml.bind.annotation.XmlTransient;
 public class ProductItem {
     @XmlElement(name = "code")
     private String code;
+
     @XmlElement(name = "count")
-    private Integer count;
+    private Double count;
     @XmlTransient
     public String getCode() {
         return code;
     }
     @XmlTransient
-    public Integer getCount() {
+    public Double getCount() {
         return count;
     }
+
 }

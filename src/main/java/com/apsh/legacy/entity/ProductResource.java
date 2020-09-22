@@ -15,10 +15,12 @@ public class ProductResource {
     private String code;
     @XmlElement(name = "name")
     private String name;
-    @XmlElement(name = "type")
-    private String type;
+
     @XmlElement(name = "capacity")
     private Integer capacity;
+  
+    @XmlElement(name = "changeLineTime")
+    private Double changeLineTime;
     @XmlTransient
     public String getCode() {
         return code;
@@ -28,11 +30,16 @@ public class ProductResource {
         return name;
     }
     @XmlTransient
-    public String getType() {
-        return type;
+  public Double getChangeLineTime() {
+        return changeLineTime;
     }
     @XmlTransient
     public Integer getCapacity() {
         return capacity;
     }
+
+
+    
+
+
 }
