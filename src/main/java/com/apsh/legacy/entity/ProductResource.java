@@ -13,8 +13,8 @@ public class ProductResource {
 
     private String name;
 
-    private String type;
-
     private Integer capacity;
+
+    private Double changeLineTime;
 
 }

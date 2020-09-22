@@ -11,6 +11,6 @@ public class ProductItem {
 
     private String code;
 
-    private Integer count;
+    private Double count;
 
 }
