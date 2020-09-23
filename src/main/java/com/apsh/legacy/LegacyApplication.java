@@ -14,11 +14,11 @@ public class LegacyApplication {
         Publisher orderPublisher = new OrderPublisher();
         //Publisher resourcePublisher = new ResourcePublisher();
         Publisher shiftPublisher = new ShiftPublisher();
-        Publisher ERPPublisher=new ERPPublisher();
+        Publisher erpPublisher=new ERPPublisher();
         //itemPublisher.publish();
         employerPublisher.publish();
         orderPublisher.publish();
-        ERPPublisher.publish();
+        erpPublisher.publish();
         shiftPublisher.publish();
     }
 

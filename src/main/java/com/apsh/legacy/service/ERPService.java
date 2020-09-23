@@ -14,11 +14,12 @@ import java.util.List;
 public class ERPService {
     private final ItemData itemData;
     private final ResourceData resourceData;
-    private final ProductData producrData;
+    private final ProductData productData;
+
     public ERPService() {
         this.itemData = new ItemData();
-        this.resourceData=new ResourceData();
-        this.producrData=new ProductData();
+        this.resourceData = new ResourceData();
+        this.productData = new ProductData();
     }
 
     @WebMethod
@@ -40,7 +41,7 @@ public class ERPService {
 
     @WebMethod
     public String getProductService() throws Exception {
-        List<Product> res = producrData.getProducts();
+        List<Product> res = productData.getProducts();
         //System.out.println(res.size());
         Products rs = new Products(res);
         Transformer<Products> jtx = new Transformer<>();
@@ -48,8 +49,4 @@ public class ERPService {
 
     }
 
-public static void main(String args[]) throws Exception {
-        ERPService s=new ERPService();
-        System.out.println(s.getProductService());
-}
 }

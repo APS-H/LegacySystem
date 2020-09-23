@@ -2,6 +2,7 @@ package com.apsh.legacy.data;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,22 +21,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductData {
 
-    static private String file = "schema/product.csv";
+    static private final String file = "schema/product.csv";
 
-    static private String resourceFile = "schema/resource.csv";
+    static private final String resourceFile = "schema/resource.csv";
 
     public List<Product> getProducts() {
         List<Product> res = new ArrayList<>();
         try {
             // 读取资源获取类型
-            CSVReader reader = new CSVReaderBuilder(new InputStreamReader(new FileInputStream(resourceFile), "utf-8"))
+            CSVReader reader = new CSVReaderBuilder(new InputStreamReader(new FileInputStream(resourceFile), StandardCharsets.UTF_8))
                     .withCSVParser(new CSVParserBuilder().withSeparator(',').build()).build();
             List<String[]> contents = reader.readAll();
             Map<String, String> resourceNameMap = new HashMap<>();
             for (String[] line : contents)
                 resourceNameMap.put(line[0], line[1]);
             // 读取产品
-            reader = new CSVReaderBuilder(new InputStreamReader(new FileInputStream(file), "utf-8"))
+            reader = new CSVReaderBuilder(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))
                     .withCSVParser(new CSVParserBuilder().withSeparator(',').build()).build();
             contents = reader.readAll();
             Product product = null;
