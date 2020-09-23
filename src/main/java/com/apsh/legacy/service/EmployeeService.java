@@ -19,11 +19,12 @@ public class EmployeeService {
     }
 
     @WebMethod
-    public String getEmployeesService() throws Exception {
-        List<Employee> res = employeeData.getEmployees();
-        Employees emd = new Employees(res);
-        Transformer<Employees> jtx = new Transformer<>();
-        return jtx.java2Xml(emd);
+    public  List<Employee> getEmployeesService() throws Exception {
+        return employeeData.getEmployees();
+//        Employees emd = new Employees(res);
+//        Transformer<Employees> jtx = new Transformer<>();
+//        return jtx.java2Xml(emd);
+
     }
 
 }

@@ -13,10 +13,10 @@ class OrderDataTest {
     @Test
     public void TestGetOrderService() throws Exception {
         OrderService s = new OrderService();
-        String actual = s.getOrderService();
-        System.out.println(actual);
-        assertNotNull(actual);
-        assertNotEquals(0, actual.length());
+        int actualAmount = s.getOrderService().size();
+        System.out.println(actualAmount);
+        //assertNotNull(actual);
+        assertNotEquals(0, actualAmount);
     }
 
 }
