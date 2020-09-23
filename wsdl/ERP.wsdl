@@ -44,7 +44,7 @@
 </portType>
 <binding name="ERPServicePortBinding" type="tns:ERPService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getProductService">
+<operation name="getItemService">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
