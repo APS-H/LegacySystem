@@ -19,11 +19,12 @@ public class ShiftService {
     }
 
     @WebMethod
-    public String getShiftService() throws Exception {
-        List<Shift> res = shiftData.getShifts();
-        Shifts sfs = new Shifts(res);
-        Transformer<Shifts> jtx = new Transformer<>();
-        return jtx.java2Xml(sfs);
+    public List<Shift> getShiftService() throws Exception {
+        return shiftData.getShifts();
+       // Shifts sfs = new Shifts(res);
+       // Transformer<Shifts> jtx = new Transformer<>();
+        //return jtx.java2Xml(sfs);
+        //return res;
     }
 
 }

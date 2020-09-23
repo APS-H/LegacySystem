@@ -22,34 +22,31 @@ public class ERPService {
     }
 
     @WebMethod
-    public String getItemService() throws Exception {
-        List<Item> res = itemData.getItems();
-        Items its = new Items(res);
-        Transformer<Items> jtx = new Transformer<>();
-        return jtx.java2Xml(its);
+    public List<Item>  getItemService() throws Exception {
+        return itemData.getItems();
+//        Items its = new Items(res);
+//        Transformer<Items> jtx = new Transformer<>();
+//        return jtx.java2Xml(its);
     }
 
     @WebMethod
-    public String getResourceService() throws Exception {
-        List<Resource> res = resourceData.getResources();
-        Resources rs = new Resources(res);
-        Transformer<Resources> jtx = new Transformer<>();
-        return jtx.java2Xml(rs);
+    public List<Resource>  getResourceService() throws Exception {
+       return resourceData.getResources();
+//        Resources rs = new Resources(res);
+//        Transformer<Resources> jtx = new Transformer<>();
+//        return jtx.java2Xml(rs);
 
     }
 
     @WebMethod
-    public String getProductService() throws Exception {
-        List<Product> res = producrData.getProducts();
-        //System.out.println(res.size());
-        Products rs = new Products(res);
-        Transformer<Products> jtx = new Transformer<>();
-        return jtx.java2Xml(rs);
+    public  List<Product> getProductService() throws Exception {
+        return producrData.getProducts();
+//        //System.out.println(res.size());
+//        Products rs = new Products(res);
+//        Transformer<Products> jtx = new Transformer<>();
+//        return jtx.java2Xml(rs);
 
     }
 
-public static void main(String args[]) throws Exception {
-        ERPService s=new ERPService();
-        System.out.println(s.getProductService());
-}
+
 }

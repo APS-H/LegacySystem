@@ -19,11 +19,11 @@ public class OrderService {
     }
 
     @WebMethod
-    public String getOrderService() throws Exception {
-        List<Order> res = orderData.getOrders();
-        Orders ods = new Orders(res);
-        Transformer<Orders> jtx = new Transformer<>();
-        return jtx.java2Xml(ods);
+    public List<Order> getOrderService() throws Exception {
+        return orderData.getOrders();
+//        Orders ods = new Orders(res);
+//        Transformer<Orders> jtx = new Transformer<>();
+//        return jtx.java2Xml(ods);
     }
 
 }
