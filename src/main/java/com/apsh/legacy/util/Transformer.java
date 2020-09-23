@@ -13,16 +13,9 @@ public class Transformer<T> {
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
                 Boolean.TRUE);
         jaxbMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
-//            SchemaFactory sf =
-//                    SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-//            Schema schema = sf.newSchema(
-//                    StudentListFile);
-//            jaxbMarshaller.setSchema(schema);
         ByteArrayOutputStream ba = new ByteArrayOutputStream();
         jaxbMarshaller.marshal(obj, ba);
-        //System.out.println(ba);
-        String xml = new String(ba.toByteArray(), StandardCharsets.UTF_8);
-        return xml;
+        return new String(ba.toByteArray(), StandardCharsets.UTF_8);
     }
 
 }

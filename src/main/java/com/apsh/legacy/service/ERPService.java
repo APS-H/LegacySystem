@@ -3,8 +3,9 @@ package com.apsh.legacy.service;
 import com.apsh.legacy.data.ItemData;
 import com.apsh.legacy.data.ProductData;
 import com.apsh.legacy.data.ResourceData;
-import com.apsh.legacy.entity.*;
-import com.apsh.legacy.util.Transformer;
+import com.apsh.legacy.entity.Item;
+import com.apsh.legacy.entity.Product;
+import com.apsh.legacy.entity.Resource;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -23,30 +24,18 @@ public class ERPService {
     }
 
     @WebMethod
-    public List<Item>  getItemService() throws Exception {
+    public List<Item> getItemService() {
         return itemData.getItems();
-//        Items its = new Items(res);
-//        Transformer<Items> jtx = new Transformer<>();
-//        return jtx.java2Xml(its);
     }
 
     @WebMethod
-    public List<Resource>  getResourceService() throws Exception {
-       return resourceData.getResources();
-//        Resources rs = new Resources(res);
-//        Transformer<Resources> jtx = new Transformer<>();
-//        return jtx.java2Xml(rs);
-
+    public List<Resource> getResourceService() {
+        return resourceData.getResources();
     }
 
     @WebMethod
-    public  List<Product> getProductService() throws Exception {
-        return producrData.getProducts();
-//        //System.out.println(res.size());
-//        Products rs = new Products(res);
-//        Transformer<Products> jtx = new Transformer<>();
-//        return jtx.java2Xml(rs);
-
+    public List<Product> getProductService() {
+        return productData.getProducts();
     }
 
 

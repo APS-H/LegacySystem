@@ -2,8 +2,6 @@ package com.apsh.legacy.service;
 
 import com.apsh.legacy.data.EmployeeData;
 import com.apsh.legacy.entity.Employee;
-import com.apsh.legacy.entity.Employees;
-import com.apsh.legacy.util.Transformer;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -19,12 +17,8 @@ public class EmployeeService {
     }
 
     @WebMethod
-    public  List<Employee> getEmployeesService() throws Exception {
+    public  List<Employee> getEmployeesService() {
         return employeeData.getEmployees();
-//        Employees emd = new Employees(res);
-//        Transformer<Employees> jtx = new Transformer<>();
-//        return jtx.java2Xml(emd);
-
     }
 
 }
