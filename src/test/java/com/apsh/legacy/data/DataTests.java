@@ -44,7 +44,7 @@ class DataTests {
 
     @Test
     void getResourcesTest() {
-        assertEquals(65, resourceData.getResources().size());
+        assertEquals(70, resourceData.getResources().size());
     }
 
     @Test
