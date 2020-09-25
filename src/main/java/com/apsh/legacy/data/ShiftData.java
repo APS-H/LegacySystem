@@ -36,4 +36,22 @@ public class ShiftData {
         return res;
     }
 
+    public List<Shift> getShiftsByTime(String beginTime, String endTime) {
+        return null;
+    }
+
+    public Shift getShiftsByCode(String code) {return null;
+    }
+
+    public List<Shift> getShiftsByGroupId(String groupId) {return null;
+    }
+
+    public List<Shift> getGroupShiftsByTime(String beginTime, String endTime) {return null;
+    }
+
+    public List<Shift> getGroupShiftsByCode(String code) {return null;
+    }
+
+    public List<Shift> getGroupShiftsByGroupId(String groupId) {return null;
+    }
 }

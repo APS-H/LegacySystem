@@ -17,8 +17,14 @@ public class EmployeeService {
     }
 
     @WebMethod
-    public  List<Employee> getEmployeesService() {
+    public  List<Employee> getEmployeesAll() {
         return employeeData.getEmployees();
+    }
+
+    @WebMethod
+    public  Boolean Indentification(String employeeId) {
+
+        return employeeData.Indentification(employeeId);
     }
 
 }

@@ -17,8 +17,13 @@ public class OrderService {
     }
 
     @WebMethod
-    public List<Order> getOrderService() {
+    public List<Order> getOrderAll() {
         return orderData.getOrders();
+    }
+
+    @WebMethod
+    public Order getOrderById(String id) {
+        return orderData.getOrderbyId(id);
     }
 
 }

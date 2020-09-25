@@ -4,25 +4,31 @@
 <xsd:import namespace="http://service.legacy.apsh.com/" schemaLocation="http://localhost:8081/Employer?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getEmployeesService">
-<part name="parameters" element="tns:getEmployeesService"/>
+<message name="getEmployeesAll">
+<part name="parameters" element="tns:getEmployeesAll"/>
 </message>
-<message name="getEmployeesServiceResponse">
-<part name="parameters" element="tns:getEmployeesServiceResponse"/>
+<message name="getEmployeesAllResponse">
+<part name="parameters" element="tns:getEmployeesAllResponse"/>
 </message>
-<message name="Exception">
-<part name="fault" element="tns:Exception"/>
+<message name="Indentification">
+<part name="parameters" element="tns:Indentification"/>
+</message>
+<message name="IndentificationResponse">
+<part name="parameters" element="tns:IndentificationResponse"/>
 </message>
 <portType name="EmployeeService">
-<operation name="getEmployeesService">
-<input wsam:Action="http://service.legacy.apsh.com/EmployeeService/getEmployeesServiceRequest" message="tns:getEmployeesService"/>
-<output wsam:Action="http://service.legacy.apsh.com/EmployeeService/getEmployeesServiceResponse" message="tns:getEmployeesServiceResponse"/>
-<fault message="tns:Exception" name="Exception" wsam:Action="http://service.legacy.apsh.com/EmployeeService/getEmployeesService/Fault/Exception"/>
+<operation name="getEmployeesAll">
+<input wsam:Action="http://service.legacy.apsh.com/EmployeeService/getEmployeesAllRequest" message="tns:getEmployeesAll"/>
+<output wsam:Action="http://service.legacy.apsh.com/EmployeeService/getEmployeesAllResponse" message="tns:getEmployeesAllResponse"/>
+</operation>
+<operation name="Indentification">
+<input wsam:Action="http://service.legacy.apsh.com/EmployeeService/IndentificationRequest" message="tns:Indentification"/>
+<output wsam:Action="http://service.legacy.apsh.com/EmployeeService/IndentificationResponse" message="tns:IndentificationResponse"/>
 </operation>
 </portType>
 <binding name="EmployeeServicePortBinding" type="tns:EmployeeService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getEmployeesService">
+<operation name="getEmployeesAll">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -30,9 +36,15 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="Exception">
-<soap:fault name="Exception" use="literal"/>
-</fault>
+</operation>
+<operation name="Indentification">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 </binding>
 <service name="EmployeeServiceService">

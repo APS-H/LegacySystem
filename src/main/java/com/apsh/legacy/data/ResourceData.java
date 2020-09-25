@@ -1,5 +1,7 @@
 package com.apsh.legacy.data;
 
+import com.apsh.legacy.entity.Item;
+import com.apsh.legacy.entity.Product;
 import com.apsh.legacy.entity.Resource;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
@@ -45,4 +47,15 @@ public class ResourceData {
         return res;
     }
 
+    public Resource getResourcesByCode(String code) {
+        return null;
+    }
+
+    public Item getItemByCode(String code) {
+        return null;
+    }
+
+    public Product getProductByCode(String code) {
+        return null;
+    }
 }

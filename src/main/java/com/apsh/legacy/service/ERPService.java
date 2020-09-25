@@ -24,19 +24,32 @@ public class ERPService {
     }
 
     @WebMethod
-    public List<Item> getItemService() {
+    public List<Item> getItemAll() {
         return itemData.getItems();
     }
 
     @WebMethod
-    public List<Resource> getResourceService() {
+    public List<Resource> getResourceAll() {
         return resourceData.getResources();
     }
 
     @WebMethod
-    public List<Product> getProductService() {
+    public List<Product> getProductAll() {
         return productData.getProducts();
     }
 
+    @WebMethod
+    public Resource getResourceByCode(String Code) {
+        return resourceData.getResourcesByCode(Code);
+    }
 
+    @WebMethod
+    public Item getItemByCode(String Code) {
+        return resourceData.getItemByCode(Code);
+    }
+
+    @WebMethod
+    public Product getProductByCode(String Code) {
+        return resourceData.getProductByCode(Code);
+    }
 }
