@@ -4,25 +4,31 @@
 <xsd:import namespace="http://service.legacy.apsh.com/" schemaLocation="http://localhost:8083/Order?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getOrderService">
-<part name="parameters" element="tns:getOrderService"/>
+<message name="getOrderById">
+<part name="parameters" element="tns:getOrderById"/>
 </message>
-<message name="getOrderServiceResponse">
-<part name="parameters" element="tns:getOrderServiceResponse"/>
+<message name="getOrderByIdResponse">
+<part name="parameters" element="tns:getOrderByIdResponse"/>
 </message>
-<message name="Exception">
-<part name="fault" element="tns:Exception"/>
+<message name="getOrderAll">
+<part name="parameters" element="tns:getOrderAll"/>
+</message>
+<message name="getOrderAllResponse">
+<part name="parameters" element="tns:getOrderAllResponse"/>
 </message>
 <portType name="OrderService">
-<operation name="getOrderService">
-<input wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderServiceRequest" message="tns:getOrderService"/>
-<output wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderServiceResponse" message="tns:getOrderServiceResponse"/>
-<fault message="tns:Exception" name="Exception" wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderService/Fault/Exception"/>
+<operation name="getOrderById">
+<input wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderByIdRequest" message="tns:getOrderById"/>
+<output wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderByIdResponse" message="tns:getOrderByIdResponse"/>
+</operation>
+<operation name="getOrderAll">
+<input wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderAllRequest" message="tns:getOrderAll"/>
+<output wsam:Action="http://service.legacy.apsh.com/OrderService/getOrderAllResponse" message="tns:getOrderAllResponse"/>
 </operation>
 </portType>
 <binding name="OrderServicePortBinding" type="tns:OrderService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getOrderService">
+<operation name="getOrderById">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -30,9 +36,15 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="Exception">
-<soap:fault name="Exception" use="literal"/>
-</fault>
+</operation>
+<operation name="getOrderAll">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 </binding>
 <service name="OrderServiceService">

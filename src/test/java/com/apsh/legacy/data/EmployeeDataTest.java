@@ -12,7 +12,7 @@ class EmployeeDataTest {
     @Test
     public void TestGetEmployersService() throws Exception {
         EmployeeService s = new EmployeeService();
-        int amount = s.getEmployeesService().size();
+        int amount = s.getEmployeesAll().size();
         System.out.println(amount);
        // assertNotNull(actual);
         assertNotEquals(0, amount);
