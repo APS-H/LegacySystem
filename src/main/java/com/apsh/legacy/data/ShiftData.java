@@ -8,19 +8,20 @@ import org.springframework.stereotype.Repository;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class ShiftData {
 
-    static private String file = "schema/shift.csv";
+    static private final String file = "schema/shift.csv";
 
     public List<Shift> getShifts() {
         List<Shift> res = new ArrayList<>();
         try {
             // 读取物品
-            CSVReader reader = new CSVReaderBuilder(new InputStreamReader(new FileInputStream(file), "utf-8"))
+            CSVReader reader = new CSVReaderBuilder(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))
                     .withCSVParser(new CSVParserBuilder().withSeparator(',').build()).build();
             List<String[]> contents = reader.readAll();
             for (String[] line : contents) {

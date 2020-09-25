@@ -12,10 +12,10 @@ class EmployeeDataTest {
     @Test
     public void TestGetEmployersService() throws Exception {
         EmployeeService s = new EmployeeService();
-        String actual = s.getEmployeesService();
-        System.out.println(actual);
-        assertNotNull(actual);
-        assertNotEquals(0, actual.length());
+        int amount = s.getEmployeesService().size();
+        System.out.println(amount);
+       // assertNotNull(actual);
+        assertNotEquals(0, amount);
     }
 
 }
