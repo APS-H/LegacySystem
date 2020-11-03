@@ -74,4 +74,4 @@ env:
   global:
     - GH_REF=https://github.com/APS-H/LegacySystem.git
     # apsh-backend镜像版本
-    - APSH_LEGACY_SYSTEM=chph/apsh-legacy-system:v1
+    - APSH_LEGACY_SYSTEM=apsh-legacy-system:v1
