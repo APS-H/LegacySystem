@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: legacy-system-deployment
   labels:
-    app: backend
+    app: legacy-system
 spec:
   replicas: 1
   strategy:
