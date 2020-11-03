@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legacy-system-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: legacy-system
+  template:
+    metadata:
+      labels:
+        app: legacy-system
+    spec:
+      containers:
+        - name: legacy-system
+          image: chph/apsh-legacy-system:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9000
+              name: employer
+            - containerPort: 9001
+              name: order
+            - containerPort: 9002
+              name: shift
+            - containerPort: 9003
+              name: erp
+

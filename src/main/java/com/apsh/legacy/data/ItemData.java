@@ -1,11 +1,13 @@
 package com.apsh.legacy.data;
 
 import com.apsh.legacy.entity.Item;
+import com.apsh.legacy.util.SchemaUtil;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import org.springframework.stereotype.Repository;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -15,7 +17,7 @@ import java.util.List;
 @Repository
 public class ItemData {
 
-    static private final String file = "schema/item.csv";
+    static private final File file = SchemaUtil.loadSchema("item.csv");
 
     public List<Item> getItems() {
         List<Item> res = new ArrayList<>();
