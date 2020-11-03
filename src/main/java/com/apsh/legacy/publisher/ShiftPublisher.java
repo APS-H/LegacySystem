@@ -7,7 +7,7 @@ import javax.xml.ws.Endpoint;
 
 public class ShiftPublisher implements Publisher {
 
-    private static final String url = "http://localhost:9002/shift";
+    private static final String url = "http://0.0.0.0:9002/shift";
 
     public void publish() {
         Endpoint.publish(url, new ShiftService());

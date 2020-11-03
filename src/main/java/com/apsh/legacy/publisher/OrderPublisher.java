@@ -7,7 +7,7 @@ import javax.xml.ws.Endpoint;
 
 public class OrderPublisher implements Publisher {
 
-    private static final String url = "http://localhost:9001/order";
+    private static final String url = "http://0.0.0.0:9001/order";
 
     public void publish() {
         Endpoint.publish(url, new OrderService());

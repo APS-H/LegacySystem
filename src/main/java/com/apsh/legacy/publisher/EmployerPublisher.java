@@ -10,7 +10,7 @@ import javax.xml.ws.Endpoint;
 @Component
 public class EmployerPublisher implements Publisher {
 
-    private static final String url = "http://localhost:9000/employer";
+    private static final String url = "http://0.0.0.0:9000/employer";
 
     public void publish() {
         Endpoint.publish(url, new EmployeeService());

@@ -8,7 +8,7 @@ import javax.xml.ws.Endpoint;
 
 public class ERPPublisher implements Publisher {
 
-    private static final String url = "http://localhost:9003/erp";
+    private static final String url = "http://0.0.0.0:9003/erp";
 
     @Override
     public void publish() {
