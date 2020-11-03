@@ -7,14 +7,9 @@ import javax.xml.ws.Endpoint;
 
 public class OrderPublisher implements Publisher {
 
-    @Value("${legacy-system.order.port}")
-    private String port;
-
-    @Value("${legacy-system.order.context}")
-    private String context;
+    private static final String url = "http://localhost:9001/order";
 
     public void publish() {
-        String url = String.format("http://localhost:%s/%s", port, context);
         Endpoint.publish(url, new OrderService());
     }
 

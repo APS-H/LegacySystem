@@ -24,7 +24,7 @@ before_script:
 
 # 执行构建脚本
 script:
-  - mvn -B -DskipTests clean install package
+  - mvn -DskipTests clean install package
   - docker build -t chph/$APSH_LEGACY_SYSTEM .
   - echo -n 'Q2hwaDExNDk3NTQ4Mjk=' | base64 --decode | docker login --username=chph --password-stdin
   - docker push chph/$APSH_LEGACY_SYSTEM

@@ -8,15 +8,10 @@ import javax.xml.ws.Endpoint;
 
 public class ERPPublisher implements Publisher {
 
-    @Value("${legacy-system.erp.port}")
-    private String port;
-
-    @Value("${legacy-system.erp.context}")
-    private String context;
+    private static final String url = "http://localhost:9003/erp";
 
     @Override
     public void publish() {
-        String url = String.format("http://localhost:%s/%s", port, context);
         Endpoint.publish(url, new ERPService());
     }
 
