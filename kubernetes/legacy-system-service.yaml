@@ -30,4 +30,4 @@ spec:
   selector:
     app: legacy-system
   # 单实例MySQL，让DNS直接解析为Pod的IP地址，即headless service
-  clusterIP: 10.98.5.212
+  clusterIP: 10.98.5.213
