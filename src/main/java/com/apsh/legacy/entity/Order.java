@@ -17,7 +17,7 @@ public class Order {
     private String itemCode;
     @XmlElement(name = "count")
     private Integer count;
-    @XmlElement(name = "data")
+    @XmlElement(name = "date")
     private String date;
 
     @XmlTransient
