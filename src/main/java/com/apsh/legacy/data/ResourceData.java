@@ -3,11 +3,13 @@ package com.apsh.legacy.data;
 import com.apsh.legacy.entity.Item;
 import com.apsh.legacy.entity.Product;
 import com.apsh.legacy.entity.Resource;
+import com.apsh.legacy.util.SchemaUtil;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import org.springframework.stereotype.Repository;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -19,8 +21,8 @@ import java.util.stream.Collectors;
 @Repository
 public class ResourceData {
 
-    static private final String calFile = "schema/cal.csv";
-    static private final String resourceFile = "schema/resource.csv";
+    static private final File calFile = SchemaUtil.loadSchema("cal.csv");
+    static private final File resourceFile = SchemaUtil.loadSchema("resource.csv");
 
     public List<Resource> getResources() {
         List<Resource> res = new ArrayList<>();
