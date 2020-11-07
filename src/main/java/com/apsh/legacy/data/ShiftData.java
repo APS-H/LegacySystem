@@ -1,11 +1,13 @@
 package com.apsh.legacy.data;
 
 import com.apsh.legacy.entity.Shift;
+import com.apsh.legacy.util.SchemaUtil;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import org.springframework.stereotype.Repository;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -15,7 +17,7 @@ import java.util.List;
 @Repository
 public class ShiftData {
 
-    static private final String file = "schema/shift.csv";
+    static private final File file = SchemaUtil.loadSchema("shift.csv");
 
     public List<Shift> getShifts() {
         List<Shift> res = new ArrayList<>();
@@ -40,18 +42,23 @@ public class ShiftData {
         return null;
     }
 
-    public Shift getShiftsByCode(String code) {return null;
+    public Shift getShiftsByCode(String code) {
+        return null;
     }
 
-    public List<Shift> getShiftsByGroupId(String groupId) {return null;
+    public List<Shift> getShiftsByGroupId(String groupId) {
+        return null;
     }
 
-    public List<Shift> getGroupShiftsByTime(String beginTime, String endTime) {return null;
+    public List<Shift> getGroupShiftsByTime(String beginTime, String endTime) {
+        return null;
     }
 
-    public List<Shift> getGroupShiftsByCode(String code) {return null;
+    public List<Shift> getGroupShiftsByCode(String code) {
+        return null;
     }
 
-    public List<Shift> getGroupShiftsByGroupId(String groupId) {return null;
+    public List<Shift> getGroupShiftsByGroupId(String groupId) {
+        return null;
     }
 }

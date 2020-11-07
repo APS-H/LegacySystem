@@ -1,15 +1,15 @@
 package com.apsh.legacy.publisher;
 
-
-
 import com.apsh.legacy.service.OrderService;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.xml.ws.Endpoint;
 
 public class OrderPublisher implements Publisher {
 
+    private static final String url = "http://0.0.0.0:9001/order";
+
     public void publish() {
-        String url = "http://localhost:8083/Order";
         Endpoint.publish(url, new OrderService());
     }
 

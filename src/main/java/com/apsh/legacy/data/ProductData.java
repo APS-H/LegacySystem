@@ -1,5 +1,6 @@
 package com.apsh.legacy.data;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -12,6 +13,7 @@ import com.apsh.legacy.entity.Product;
 import com.apsh.legacy.entity.ProductItem;
 import com.apsh.legacy.entity.ProductResource;
 import com.apsh.legacy.entity.ProductTech;
+import com.apsh.legacy.util.SchemaUtil;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
@@ -21,9 +23,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductData {
 
-    static private final String file = "schema/product.csv";
+    static private final File file = SchemaUtil.loadSchema("product.csv");
 
-    static private final String resourceFile = "schema/resource.csv";
+    static private final File resourceFile = SchemaUtil.loadSchema("resource.csv");
 
     public List<Product> getProducts() {
         List<Product> res = new ArrayList<>();
